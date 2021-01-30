@@ -1,0 +1,166 @@
+<div class="cont" class="border border-primary">
+   
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <h3>Registration form</h3>
+        <div class="container">
+        <div class="form-group">
+          <div class="form-group ">
+            <label for="firstName">Firstname:</label>
+            <span class="text-danger"*ngIf="form.get('firstName').hasError('required')">*</span>
+            <input type="text" class="form-control" id="firstName" placeholder="First name" formControlName="firstName" >
+            
+          </div>
+          <div class="form-group" >
+            <label for="lastName">Last name:</label>
+            <span class="text-danger"*ngIf="form.get('lastName').hasError('required')">*</span>
+            <input type="text" class="form-control" id="lastName" placeholder="Last name" formControlName="lastName" required>         
+          </div>
+        </div>
+         <div class="form-group">
+            <label >Gender <span class="text-danger"*ngIf="form.get('gender').hasError('required')">*</span>:</label>
+            
+            <input type="radio" formControlName="gender" >  
+            <label for="male">Male</label>
+            <input type="radio" formControlName="gender"  value="female">
+            <label >Female</label>
+         </div>
+     
+
+   
+        
+          <div class="form-group">
+            <label for="">Aadhar card number:</label>
+            <span class="text-danger"*ngIf="form.get('aadharCard').hasError('required')">*</span>
+            <input type="text" class="form-control" id="aadharCard" placeholder="Enter your 12 digit aadhar number" formControlName="aadharCard" required> 
+            <div *ngIf="form.get('aadharCard').hasError('minlength')">  
+              <span style="color: red;">Enter valid 12 digit Aadhar number</span>  
+             </div>  
+          </div>
+          <div class="form-group">
+            <label for="">Pan card number:</label>
+            <span class="text-danger"*ngIf="form.get('panCard').hasError('required')">*</span>
+            <input type="text" class="form-control" id="panCard" placeholder="Eg:ALWPG5809L" formControlName="panCard" required>
+            <div *ngIf="form.get('panCard').hasError('pattern')">  
+              <span style="color: red;">Enter valid Pan card number</span>  
+             </div>  
+          </div>
+
+    
+         <div class="form-group ">
+            <label >Date of birth:</label>
+            <span class="text-danger"*ngIf="form.get('dateOfBirth').hasError('required')">*</span>
+            <div class="col-4">
+              <input class="form-control" type="date"  id="example-date-input" formControlName="dateOfBirth" style="
+              margin-left: 84px;
+              margin-top: -39px;
+          " required>
+            </div>
+            <br>
+    
+            <div class="form-group">
+                <label for="">Email:</label>
+                <span class="text-danger"*ngIf="form.get('email').hasError('required') ">*</span>
+                <input type="text" class="form-control" id="email" placeholder="Eg:xyz@abc.com" formControlName="email">
+                <div *ngIf="form.get('email').hasError('pattern')">  
+                  <span style="color: red;">Enter valid mail id</span>  
+                 </div>  
+     
+              </div>
+             
+
+        <div class="form-group">
+          <label for="inputAddress">Address:</label>
+          <span class="text-danger"*ngIf="form.get('inputAddress').hasError('required')">*</span>
+          <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" formControlName="inputAddress" required>
+        </div>
+        <div class="form-group">
+          <label for="inputAddress2">Address 2:</label>
+          <span class="text-danger"*ngIf="form.get('inputAddress2').hasError('required')">*</span>
+          <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor" formControlName="inputAddress2" required>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="inputCity">City:</label>
+            <span class="text-danger"*ngIf="form.get('inputCity').hasError('required')">*</span>
+            <input type="text" class="form-control" id="inputCity" formControlName="inputCity" required>
+          </div>
+          
+        <div class="form-row">
+          </div>
+          <div class="form-group col-md-4">
+            <label for="inputZip">Zip:</label>
+            <span class="text-danger"*ngIf="form.get('inputZip').hasError('required')">*</span>
+            <input type="text" class="form-control" id="inputZip" formControlName="inputZip" required>
+          </div>
+    
+         
+        <div class="form-group col-md-4">
+          <label for="inputState">State:</label>
+          <span class="text-danger"*ngIf="form.get('inputState').hasError('required')">*</span>
+         
+          <select  class="form-control" id="inputState" formControlName="inputState" aria-placeholder="Karnataka" required style="
+          margin-top: -32px;
+          margin-left: 60px;">
+            <option value='Andaman and Nicobar Islands'>Andaman and Nicobar Islands</option>
+            <option value='Andhra Pradesh'>Andhra Pradesh</option>
+            <option value='Arunachal Pradesh'>Arunachal Pradesh</option>
+            <option value='Assam'>Assam</option>
+            <option value='Bihar'>Bihar</option>
+            <option value='Chandigarh'>Chandigarh</option>
+            <option value='Chhattisgarh'>Chhattisgarh</option>
+            <option value='Dadra and Nagar Haveli'>Dadra and Nagar Haveli</option>
+            <option value='Daman and Diu'>Daman and Diu</option>
+            <option value='Delhi'>Delhi</option>
+            <option value='Goa'>Goa</option>
+            <option value='Gujarat'>Gujarat</option>
+            <option value='Haryana'>Haryana</option>
+            <option value='Himachal Pradesh'>Himachal Pradesh</option>
+            <option value='Jammu and Kashmir'>Jammu and Kashmir</option>
+            <option value='Jharkhand'>Jharkhand</option>
+            <option value='Karnataka'>Karnataka</option>
+            <option value='Kerala'>Kerala</option>
+            <option value='Lakshadweep'>Lakshadweep</option>
+            <option value='Madhya Pradesh'>Madhya Pradesh</option>
+            <option value='Maharashtra'>Maharashtra</option>
+            <option value='Manipur'>Manipur</option>
+            <option value='Meghalaya'>Meghalaya</option>
+            <option value='Mizoram'>Mizoram</option>
+            <option value='Nagaland'>Nagaland</option>
+            <option value='Odisha'>Odisha</option>
+            <option value='Puducherry'>Puducherry</option>
+            <option value='Punjab'>Punjab</option>
+            <option value='Rajasthan'>Rajasthan</option>
+            <option value='Sikkim'>Sikkim</option>
+            <option value='Tamil Nadu'>Tamil Nadu</option>
+            <option value='Telengana'>Telengana</option>
+            <option value='Tripura'>Tripura</option>
+            <option value='Uttar Pradesh'>Uttar Pradesh</option>
+            <option value='Uttarakhand'>Uttarakhand</option>
+            <option value='West Bengal'>West Bengal</option>
+            </select>
+      </div>
+      <div class="form-group col-md-4"  style=" margin-left: 100px;">
+        <label for="inputCountry" >Country:</label>
+        <span class="text-danger"*ngIf="form.get('inputCountry').hasError('required')">*</span>
+        <select class="form-control" id="inputCountry" formControlName="inputCountry" aria-placeholder="India" required style="margin-left: 74px;
+        margin-top: -35px; " >
+          <option value='India'>India</option>
+          </select>
+    </div>
+
+    </div>
+        
+        <div class="form-group">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="gridCheck" required>
+            <label class="form-check-label" for="gridCheck">
+              I  agreee with terms and Conditions
+            </label>
+          </div>
+        </div>
+        <button type="submit" [disabled]="!form.valid">Create account</button>
+    </div>
+        </div>
+    </form>
+</div>
+
