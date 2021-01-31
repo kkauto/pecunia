@@ -34,7 +34,7 @@ export class DebitCardApplicationComponent implements OnInit {
   //  "inputZip":new FormControl("", Validators.required),
   //  "inputCountry":new FormControl("", Validators.required),
    "gender":new FormControl("", Validators.required),
-
+   "accountNumber":new FormControl("", Validators.required),
    
   "phone":new FormControl("", Validators.compose([
     Validators.pattern('^[0-9]{10}$'),
@@ -57,9 +57,9 @@ export class DebitCardApplicationComponent implements OnInit {
 
 onSubmit() {
   console.warn(this.form.value);
-  console.log(this.form.controls['firstName'].value);
   console.log("reactive form submitted");
 console.log(this.form);
+
   }
   
 

@@ -27,7 +27,8 @@
               <label class="control-label" >Gender: </label><span class="text-danger"*ngIf="form.get('gender').hasError('required')">*</span>
                <div class="col=md-10 regInput" >
               <select class="form-control" id="gender" formControlName="gender" aria-placeholder="select" required >
-            <option value='Male'>Male</option>
+                <option value="" selected>Select</option>
+                <option value='Male'>Male</option>
             <option value='Female'>Female</option>
             <option value='Other'>Other</option>
             </select> 
@@ -71,9 +72,16 @@
        
                 </div>
                
-  
+                <div class="form-group">
+                  <label for="" class="control-label">Account number:</label>
+                  <span class="text-danger"*ngIf="form.get('accountNumber').hasError('required')">*</span>
+                   <div class="col=md-10 regInput" >
+                  <input type="text" class="form-control" id="accountNumber" placeholder="Enter your account number" formControlName="accountNumber" required> 
+                  </div>
+                  
+                </div> 
           <div class="form-group">
-            <label for="" class="control-label">Aadhar card number:</label>
+            <label for="" class="control-label">Aadhar UID number:</label>
             <span class="text-danger"*ngIf="form.get('aadharCard').hasError('required')">*</span>
              <div class="col=md-10 regInput" >
             <input type="text" class="form-control" id="aadharCard" placeholder="Enter your 12 digit aadhar number" formControlName="aadharCard" required> 
@@ -176,11 +184,30 @@
               </label>
             </div>
           </div>
-          <button type="submit" [disabled]="!form.valid">Create account</button>
+          <button type="submit" [disabled]="!form.valid" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Create account</button> 
      
-          
-      </form>
+        
+        </form>
       </div>
+      <!-- Modal -->
+<div id="myModal" class="modal " role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+  
+      <div class="modal-body">
+        <p>Successfully applied for debit card</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button"  class="btn btn-default modalButton" data-dismiss="modal">OK</button>
+      </div>
+    </div>
+
   </div>
+</div>
+  </div>
+  
+  
   
   

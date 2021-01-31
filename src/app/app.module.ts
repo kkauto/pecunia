@@ -9,6 +9,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { CreditCardApplicationComponent } from './credit-card-application/credit-card-application.component';
 import { DebitCardApplicationComponent } from './debit-card-application/debit-card-application.component';
+import { CommonModule } from '@angular/common';
 
 
 
@@ -24,9 +25,11 @@ import { DebitCardApplicationComponent } from './debit-card-application/debit-ca
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
+  
     
 
   

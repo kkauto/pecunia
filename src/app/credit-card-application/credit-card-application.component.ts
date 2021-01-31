@@ -34,8 +34,7 @@ export class CreditCardApplicationComponent implements OnInit {
   //  "inputZip":new FormControl("", Validators.required),
   //  "inputCountry":new FormControl("", Validators.required),
    "gender":new FormControl("", Validators.required),
-
-   
+   "accountNumber":new FormControl("", Validators.required),
   "phone":new FormControl("", Validators.compose([
     Validators.pattern('^[0-9]{10}$'),
     Validators.required

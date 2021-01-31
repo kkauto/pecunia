@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
-
 @Component({
   selector: 'app-registration-form',
   templateUrl: './registration-form.component.html',
@@ -9,8 +8,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class RegistrationFormComponent implements OnInit {
   isFormSubmitted: boolean;
-  
- 
+  password:any;
 
 
   constructor() { }
@@ -27,7 +25,7 @@ export class RegistrationFormComponent implements OnInit {
     Validators.pattern ('^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$'),
     Validators.required
   ])),
-
+    "checkBox":new FormControl("",Validators.required),
    "inputAddress":new FormControl("", Validators.required),
   //  "inputAddress2":new FormControl("", Validators.required),
   //  "inputCity":new FormControl("", Validators.required),
@@ -61,9 +59,9 @@ onSubmit() {
   console.log(this.form.controls['firstName'].value);
   console.log("reactive form submitted");
 console.log(this.form);
-  }
-  
-
+  var randomstring = Math.random().toString(36).slice(-8);
+  this.password=randomstring;
+  console.log(this.password);
+console.log(randomstring)
 }
-
-
+}
