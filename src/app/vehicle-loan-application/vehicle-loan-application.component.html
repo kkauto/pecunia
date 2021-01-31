@@ -3,7 +3,7 @@
       <form [formGroup]="form" (ngSubmit)="onSubmit()" class="form-horizontal">
         <div>
           <img src="assets/logo.png" alt="" style="height:100px">
-          <h1>Credit Card Application</h1>
+          <h1>Vehicle Loan Application</h1>
         </div>  
        
         
@@ -49,6 +49,13 @@
             <span class="text-danger"*ngIf="form.get('inputAddress').hasError('required')">*</span>
              <div class="col=md-10 regInput" >
             <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" formControlName="inputAddress" required>
+          </div>
+        </div>
+        <div class="form-group">
+            <label for="occupation" class="control-label">Occupation:</label>
+            <span class="text-danger"*ngIf="form.get('occupation').hasError('required')">*</span>
+             <div class="col=md-10 regInput" >
+            <input type="text" class="form-control" id="occupation" placeholder="occupation" formControlName="occupation" required>
           </div>
         </div>
           <div class="form-group">
@@ -198,7 +205,7 @@
     <div class="modal-content">
   
       <div class="modal-body">
-        <p>Successfully applied for credit card</p>
+        <p>Successfully applied for vehicle loan</p>
       </div>
       <div class="modal-footer">
         <button type="button"  class="btn btn-default modalButton" data-dismiss="modal">OK</button>

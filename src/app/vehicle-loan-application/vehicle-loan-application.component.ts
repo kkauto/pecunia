@@ -1,17 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-
 @Component({
-  selector: 'app-credit-card-application',
-  templateUrl: './credit-card-application.component.html',
-  styleUrls: ['./credit-card-application.component.css']
+  selector: 'app-vehicle-loan-application',
+  templateUrl: './vehicle-loan-application.component.html',
+  styleUrls: ['./vehicle-loan-application.component.css']
 })
-export class CreditCardApplicationComponent implements OnInit {
+export class VehicleLoanApplicationComponent implements OnInit {
+
   isFormSubmitted: boolean;
-  
- 
-
-
   constructor() { }
 
   ngOnInit(): void {
@@ -22,6 +18,7 @@ export class CreditCardApplicationComponent implements OnInit {
     "firstName": new FormControl("", Validators.required),
     "lastName":new FormControl("", Validators.required),
     "dateOfBirth":new FormControl("", Validators.required),
+    "occupation":new FormControl("", Validators.required),
    "email":new FormControl("", Validators.compose([
     Validators.pattern ('^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$'),
     Validators.required
@@ -64,5 +61,6 @@ console.log(this.form);
   
 
 }
+
 
 

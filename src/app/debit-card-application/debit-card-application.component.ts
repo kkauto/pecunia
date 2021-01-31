@@ -35,7 +35,7 @@ export class DebitCardApplicationComponent implements OnInit {
   //  "inputCountry":new FormControl("", Validators.required),
    "gender":new FormControl("", Validators.required),
    "accountNumber":new FormControl("", Validators.required),
-   
+   "checkBox":new FormControl("", Validators.required),
   "phone":new FormControl("", Validators.compose([
     Validators.pattern('^[0-9]{10}$'),
     Validators.required
