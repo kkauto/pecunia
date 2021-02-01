@@ -28,11 +28,7 @@ export class DebitCardApplicationComponent implements OnInit {
   ])),
 
    "inputAddress":new FormControl("", Validators.required),
-  //  "inputAddress2":new FormControl("", Validators.required),
-  //  "inputCity":new FormControl("", Validators.required),
-  //  "inputState":new FormControl("", Validators.required),
-  //  "inputZip":new FormControl("", Validators.required),
-  //  "inputCountry":new FormControl("", Validators.required),
+  
    "gender":new FormControl("", Validators.required),
    "accountNumber":new FormControl("", Validators.required),
    "checkBox":new FormControl("", Validators.required),

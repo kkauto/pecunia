@@ -20,17 +20,14 @@ export class HomeLoanApplicationComponent implements OnInit {
     "lastName":new FormControl("", Validators.required),
     "dateOfBirth":new FormControl("", Validators.required),
     "occupation":new FormControl("", Validators.required),
+    "expectedAmount":new FormControl("", Validators.required),
    "email":new FormControl("", Validators.compose([
     Validators.pattern ('^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$'),
     Validators.required
   ])),
 
    "inputAddress":new FormControl("", Validators.required),
-  //  "inputAddress2":new FormControl("", Validators.required),
-  //  "inputCity":new FormControl("", Validators.required),
-  //  "inputState":new FormControl("", Validators.required),
-  //  "inputZip":new FormControl("", Validators.required),
-  //  "inputCountry":new FormControl("", Validators.required),
+ 
    "gender":new FormControl("", Validators.required),
    "accountNumber":new FormControl("", Validators.required),
    "checkBox":new FormControl("", Validators.required),

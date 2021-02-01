@@ -58,6 +58,14 @@
             <input type="text" class="form-control" id="occupation" placeholder="occupation" formControlName="occupation" required>
           </div>
         </div>
+
+        <div class="form-group">
+          <label for="occupation" class="control-label">Expected amount:</label>
+          <span class="text-danger"*ngIf="form.get('expectedAmount').hasError('required')">*</span>
+           <div class="col=md-10 regInput" >
+          <input type="text" class="form-control" id="expectedAmount" placeholder="Expected amount" formControlName="expectedAmount" required>
+        </div>
+      </div>
           <div class="form-group">
             <label for="" class="control-label">Phone:</label>
             <span class="text-danger"*ngIf="form.get('phone').hasError('required') ">*</span>
@@ -107,83 +115,7 @@
               <span style="color: red;"><b>Enter valid Pan card number</b></span>  
              </div>  
           </div>
-          <!-- <div class="form-group">
-            <label for="inputAddress2">Address 2:</label>
-            <span class="text-danger"*ngIf="form.get('inputAddress2').hasError('required')">*</span>
-            <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor" formControlName="inputAddress2" required>
-          </div> -->
-          <!-- <div class="form-row">
-            <div class="form-group col-md-6">
-              <label for="inputCity">City:</label>
-              <span class="text-danger"*ngIf="form.get('inputCity').hasError('required')">*</span>
-              <input type="text" class="form-control" id="inputCity" formControlName="inputCity" required>
-            </div>
-          </div>
-          <div class="form-row">
-            </div>
-            <div class="form-group col-md-4">
-              <label for="inputZip">Zip:</label>
-              <span class="text-danger"*ngIf="form.get('inputZip').hasError('required')">*</span>
-              <input type="text" class="form-control" id="inputZip" formControlName="inputZip" required>
-            </div>
-      
-           
-          <div class="form-group col-md-4">
-            <label for="inputState">State:</label>
-            <span class="text-danger"*ngIf="form.get('inputState').hasError('required')">*</span>
-           
-            <select  class="form-control" id="inputState" formControlName="inputState" aria-placeholder="Karnataka" required style="
-            margin-top: -32px;
-            margin-left: 60px;">
-              <option value='Andaman and Nicobar Islands'>Andaman and Nicobar Islands</option>
-              <option value='Andhra Pradesh'>Andhra Pradesh</option>
-              <option value='Arunachal Pradesh'>Arunachal Pradesh</option>
-              <option value='Assam'>Assam</option>
-              <option value='Bihar'>Bihar</option>
-              <option value='Chandigarh'>Chandigarh</option>
-              <option value='Chhattisgarh'>Chhattisgarh</option>
-              <option value='Dadra and Nagar Haveli'>Dadra and Nagar Haveli</option>
-              <option value='Daman and Diu'>Daman and Diu</option>
-              <option value='Delhi'>Delhi</option>
-              <option value='Goa'>Goa</option>
-              <option value='Gujarat'>Gujarat</option>
-              <option value='Haryana'>Haryana</option>
-              <option value='Himachal Pradesh'>Himachal Pradesh</option>
-              <option value='Jammu and Kashmir'>Jammu and Kashmir</option>
-              <option value='Jharkhand'>Jharkhand</option>
-              <option value='Karnataka'>Karnataka</option>
-              <option value='Kerala'>Kerala</option>
-              <option value='Lakshadweep'>Lakshadweep</option>
-              <option value='Madhya Pradesh'>Madhya Pradesh</option>
-              <option value='Maharashtra'>Maharashtra</option>
-              <option value='Manipur'>Manipur</option>
-              <option value='Meghalaya'>Meghalaya</option>
-              <option value='Mizoram'>Mizoram</option>
-              <option value='Nagaland'>Nagaland</option>
-              <option value='Odisha'>Odisha</option>
-              <option value='Puducherry'>Puducherry</option>
-              <option value='Punjab'>Punjab</option>
-              <option value='Rajasthan'>Rajasthan</option>
-              <option value='Sikkim'>Sikkim</option>
-              <option value='Tamil Nadu'>Tamil Nadu</option>
-              <option value='Telengana'>Telengana</option>
-              <option value='Tripura'>Tripura</option>
-              <option value='Uttar Pradesh'>Uttar Pradesh</option>
-              <option value='Uttarakhand'>Uttarakhand</option>
-              <option value='West Bengal'>West Bengal</option>
-              </select>
-        </div>
-        <div class="form-group col-md-4"  style=" margin-left: 100px;">
-          <label for="inputCountry" >Country:</label>
-          <span class="text-danger"*ngIf="form.get('inputCountry').hasError('required')">*</span>
-          <select class="form-control" id="inputCountry" formControlName="inputCountry" aria-placeholder="India" required style="margin-left: 74px;
-          margin-top: -35px; " >
-            <option value='India'>India</option>
-            </select> 
-      </div>-->
-  
-      
-          
+         
           <div class="form-group">
             <div class="form-check">
               <input class="form-check-input" type="checkbox" id="gridCheck" formControlName=checkBox required>
