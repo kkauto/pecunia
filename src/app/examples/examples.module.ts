@@ -7,6 +7,11 @@ import { LandingComponent } from './landing/landing.component';
 import { ProfileComponent } from './profile/profile.component';
 import { SignupComponent } from './signup/signup.component';
 import { SignInComponent } from './sign-in/sign-in.component';
+import { PersonalLoanComponent } from './personal-loan/personal-loan.component';
+import { HomeLoanComponent } from './home-loan/home-loan.component';
+import { VehicleLoanComponent } from './vehicle-loan/vehicle-loan.component';
+import { GoldLoanComponent } from './gold-loan/gold-loan.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
     imports: [
@@ -14,12 +19,17 @@ import { SignInComponent } from './sign-in/sign-in.component';
         FormsModule,
         ReactiveFormsModule,
         NgbModule,
+        RouterModule,
     ],
     declarations: [
         LandingComponent,
         SignupComponent,
         ProfileComponent,
-        SignInComponent
+        SignInComponent,
+        PersonalLoanComponent,
+        HomeLoanComponent,
+        VehicleLoanComponent,
+        GoldLoanComponent
     ]
 })
 export class ExamplesModule { }

@@ -10,6 +10,9 @@ import { LandingComponent } from './examples/landing/landing.component';
 import { NucleoiconsComponent } from './components/nucleoicons/nucleoicons.component';
 
 import { SignInComponent } from './examples/sign-in/sign-in.component';
+import { HomeLoanComponent } from './examples/home-loan/home-loan.component';
+import { PersonalLoanComponent } from './examples/personal-loan/personal-loan.component';
+import { VehicleLoanComponent } from './examples/vehicle-loan/vehicle-loan.component';
 
 const routes: Routes =[
     { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -19,8 +22,12 @@ const routes: Routes =[
     { path: 'about',          component: LandingComponent },
     { path: 'contacts',      component: NucleoiconsComponent },
     { path: 'signup',      component: SignInComponent},
+    { path: 'vehicleloan', component: VehicleLoanComponent, },
+    { path: 'homeloan',      component: HomeLoanComponent},
+    { path: 'personalloan',      component: PersonalLoanComponent},
+    { path: 'goldloan',      component: HomeLoanComponent},
     
-  
+
 ];
 
 @NgModule({
