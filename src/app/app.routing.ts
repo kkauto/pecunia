@@ -13,6 +13,7 @@ import { SignInComponent } from './examples/sign-in/sign-in.component';
 import { HomeLoanComponent } from './examples/home-loan/home-loan.component';
 import { PersonalLoanComponent } from './examples/personal-loan/personal-loan.component';
 import { VehicleLoanComponent } from './examples/vehicle-loan/vehicle-loan.component';
+import { GoldLoanComponent } from './examples/gold-loan/gold-loan.component';
 
 const routes: Routes =[
     { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -25,7 +26,7 @@ const routes: Routes =[
     { path: 'vehicleloan', component: VehicleLoanComponent, },
     { path: 'homeloan',      component: HomeLoanComponent},
     { path: 'personalloan',      component: PersonalLoanComponent},
-    { path: 'goldloan',      component: HomeLoanComponent},
+    { path: 'myaccount',      component: GoldLoanComponent},
     
 
 ];

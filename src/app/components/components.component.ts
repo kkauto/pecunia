@@ -12,6 +12,7 @@ import { NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
 })
 
 export class ComponentsComponent implements OnInit {
+
     page = 4;
     page1 = 5;
     focus;
@@ -30,6 +31,7 @@ export class ComponentsComponent implements OnInit {
     }
 
     ngOnInit() {
+        sessionStorage.clear();
         let input_group_focus = document.getElementsByClassName('form-control');
         let input_group = document.getElementsByClassName('input-group');
         for (let i = 0; i < input_group.length; i++) {
