@@ -1,7 +1,7 @@
 
 <div  class="regform border border-primary">
     <div class="container">
-      <form [formGroup]="form" (ngSubmit)="onSubmit()" class="form-horizontal" style="background-color:rgb(255, 143, 94); margin-top: 150px;">
+      <form [formGroup]="form" (ngSubmit)="onSubmit()" class="form-horizontal" style=" margin-top: 150px;">
         <div>
           
           <h3 class="title" style="align-content: center; font-weight: bold;">Registeration Form</h3>
@@ -72,6 +72,8 @@
                    </div>  
        
                 </div>
+
+
                
   
           <div class="form-group">
@@ -94,45 +96,55 @@
              </div>  
           </div>
         
-  
+    <div class="form-group">
+              <label class="control-label" >Type of account <span class="text-danger"*ngIf="form.get('accountType').hasError('required')">*</span>:</label>
+               <div class="col=md-10 regInput" >
+              <select class="form-control" id="accountType" formControlName="accountType" aria-placeholder="select" required >
+            <option value="" selected>Select</option>
+            <option value='currentAccount'>Current account</option>
+            <option value='savingsAccount'>Savings account</option>
+            <option value='fdAccount'>FD Account</option>
+            </select> 
+           </div>
+           </div>
       
+          <div class="form-group " >
+            <label for="" class="control-label">Password:</label>
+            <span class="text-danger"*ngIf="form.get('password').hasError('required')">*</span>
+             <div class="col=md-10 regInput " >
+            
+             <input type="password" class="form-control" id="password" placeholder="Eg:Enter your password" formControlName="password" required></div> 
+     
+
+             <div *ngIf="form.get('password').hasError('pattern')">  
+               <ul style="color: red;">
+                  Your password should be
+            <li id="len" onkeyup="lenCheck()" >Must be least 8 characters in length</li>
+            <li id="lower">Must have lowercase letters</li>
+            <li id="upper">Must have uppercase letters</li>
+            <li id="number">Must have numbers</li>
+            <li id="chara">Must have special characters</li>
+            </ul> 
+             </div>  
+          </div>
+          
+          
           
           <div class="form-group">
             <div class="form-check-label">
-              <input class="form-check-input" type="checkbox" id="gridCheck" formControlName=checkBox required>
-              <label class="form-check-label" for="gridCheck">
+              <input class="form-check-input" type="checkbox" id="gridCheck" formControlName=checkBox required style="margin-left: 12px;">
+              <label class="form-check-label" for="gridCheck" style="margin-left: 36px;">
                 I  agreee with terms and Conditions
               </label>
             </div>
           </div>
-          <button type="submit" [disabled]="!form.valid" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Create account</button>
+          <button type="submit" [disabled]="!form.valid" >Create account</button>
      
           
       </form>
       </div>
+</div>
   
      
-  
-  <!-- Modal -->
-  <div id="myModal" class="modal " role="dialog">
-    <div class="modal-dialog">
-  
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-        
-         
-        </div>
-        <div class="modal-body">
-          <p>Account creation successfull! 
-        </div>
-        <div class="modal-footer">
-          <button type="button"  class="btn btn-default modalButton" data-dismiss="modal">OK</button>
-        </div>
-      </div>
-  
-    </div>
-  </div>
-  </div>
   
   

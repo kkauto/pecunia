@@ -31,7 +31,8 @@ export class SignInComponent implements OnInit {
    "inputAddress":new FormControl("", Validators.required),
 
    "gender":new FormControl("", Validators.required),
-
+  
+   "accountType":new FormControl("", Validators.required),
    
   "phone":new FormControl("", Validators.compose([
     Validators.pattern('^[0-9]{10}$'),
@@ -49,6 +50,13 @@ export class SignInComponent implements OnInit {
     Validators.pattern('[A-Z]{5}[0-9]{4}[A-Z]{1}'),
     Validators.required
   ])),
+
+  
+  "password":new FormControl("", Validators.compose([
+    Validators.required,
+    Validators.pattern('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}'),
+  ])),
+
 });
 
 
