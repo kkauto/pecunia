@@ -54,7 +54,7 @@ export class SignInComponent implements OnInit {
   
   "password":new FormControl("", Validators.compose([
     Validators.required,
-    Validators.pattern('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}'),
+  
   ])),
 
 });

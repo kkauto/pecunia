@@ -101,9 +101,9 @@
                <div class="col=md-10 regInput" >
               <select class="form-control" id="accountType" formControlName="accountType" aria-placeholder="select" required >
             <option value="" selected>Select</option>
-            <option value='currentAccount'>Current account</option>
-            <option value='savingsAccount'>Savings account</option>
-            <option value='fdAccount'>FD Account</option>
+            <option value='Current account'>Current account</option>
+            <option value='Savings account'>Savings account</option>
+            <option value='FD account'>FD account</option>
             </select> 
            </div>
            </div>
@@ -115,17 +115,6 @@
             
              <input type="password" class="form-control" id="password" placeholder="Eg:Enter your password" formControlName="password" required></div> 
      
-
-             <div *ngIf="form.get('password').hasError('pattern')">  
-               <ul style="color: red;">
-                  Your password should be
-            <li id="len" onkeyup="lenCheck()" >Must be least 8 characters in length</li>
-            <li id="lower">Must have lowercase letters</li>
-            <li id="upper">Must have uppercase letters</li>
-            <li id="number">Must have numbers</li>
-            <li id="chara">Must have special characters</li>
-            </ul> 
-             </div>  
           </div>
           
           
