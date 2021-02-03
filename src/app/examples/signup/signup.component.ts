@@ -19,7 +19,10 @@ export class SignupComponent implements OnInit {
     ngOnInit() {}
     loginUser(){
         this._service.loginUserFromRemote(this.user).subscribe(
-            data => console.log("Login Success!") ,
+            data => {console.log("Login Success!") ;
+            this._router.navigate(['/user-profile'])
+             }
+            ,
             error => {console.log("Bad Credentials! Try again");
             this.msg="Bad Credentials! Please Try Again"}
             

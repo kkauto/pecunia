@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { RegistrationService } from 'app/registration.service';
+import { User } from 'app/user';
 
 
 @Component({
@@ -10,11 +13,22 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class SignInComponent implements OnInit {
 
   isFormSubmitted: boolean;
+  user = new User();
+  msg='';
 
 
+  constructor(private _service:RegistrationService, private _router:Router) { }
 
-  constructor() { }
-
+  registerUser(){
+    this._service.registerUserFromRemote(this.user).subscribe(
+        data => {console.log("register Success!") ;
+        this._router.navigate(['/login'])
+      },
+        error => {console.log("error dcofocuer");
+        alert("Email id/Phone number already exist!")}
+        
+    )
+   }
   ngOnInit(): void {
   }
  
@@ -58,7 +72,9 @@ export class SignInComponent implements OnInit {
   ])),
 
 });
-
+gotologin(){
+  this._router.navigate(['/login'])
+}
 
 onSubmit() {
   console.warn(this.form.value);

@@ -6,9 +6,10 @@ export class User {
 	dob:Date;
 	address:string;
 	email:string;
-	uid:number;
+	aadhar:number;
 	pan:string;
 	password:string;
+	acctype:number;
     constructor(){}
        
 
