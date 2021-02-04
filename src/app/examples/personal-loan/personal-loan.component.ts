@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { User } from 'app/user';
 import { LoanService } from './loan.service';
+
 @Component({
   selector: 'app-personal-loan',
   templateUrl: './personal-loan.component.html',
@@ -10,7 +11,13 @@ import { LoanService } from './loan.service';
 export class PersonalLoanComponent implements OnInit {
   isFormSubmitted: boolean;
   form: FormGroup;
+ 
   constructor(private loanService:LoanService) { }
+
+  onClick(){
+    alert("Applied for loan successfully");
+    window.location.href='/myaccount';
+  }
 
   ngOnInit(): void {
     let user: User = JSON.parse(sessionStorage.getItem("loggedinCustomer"));
@@ -20,6 +27,7 @@ export class PersonalLoanComponent implements OnInit {
       "lastName": new FormControl(user.lastname, Validators.required),
       "dateOfBirth": new FormControl(user.dob, Validators.required),
       "occupation": new FormControl("", Validators.required),
+      "typeOfLoan": new FormControl("", Validators.required),
       "email": new FormControl(user.email, Validators.compose([
         Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$'),
         Validators.required
