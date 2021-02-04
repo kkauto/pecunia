@@ -14,42 +14,34 @@
 <br><br>
 <br><br>
 
-<h1>LOAN DETAILS</h1>
-<head>
-  <title>LOAN DETAILS</title> 
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-</head>
-<body>
+<div class="container" style="margin-top:275px;">
+  <h1 style="font-weight: 500; margin-bottom: 25px;">Loans Applied</h1>         
+ <table class="table table-bordered">
+   <thead>
+     <tr>
+       <th>Loan Type</th>
+       <th>Loan Amount</th>
+       <th>Loan Status</th>
 
-<div class="container">
-            
-  <table class="table table-striped">
-    <thead>
-      <tr>
-        <th>Amount</th>
-        <th>Occupation</th>
-        <th>Email</th>
+
+
+
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let loan of userData.userloan">
         <td>
-         {{loan.amount}}
-        </td>
-        <td>
           {{loan.occupation}}
         </td>
         <td>
-          {{userData.email}}
+          {{loan.amount}}
+          
         </td>
-      </tr>
+   
+         <td style="font-weight: bold; color: green;">
+         Processing
+        </td>
      
     </tbody>
   </table>
 </div>
-
-</body>
