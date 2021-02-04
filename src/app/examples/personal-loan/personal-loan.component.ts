@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnDestroy, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { User } from 'app/user';
 import { LoanService } from './loan.service';
@@ -8,11 +8,11 @@ import { LoanService } from './loan.service';
   templateUrl: './personal-loan.component.html',
   styleUrls: ['./personal-loan.component.css']
 })
-export class PersonalLoanComponent implements OnInit {
+export class PersonalLoanComponent implements OnInit,OnDestroy {
   isFormSubmitted: boolean;
   form: FormGroup;
  
-  constructor(private loanService:LoanService) { }
+  constructor(private loanService:LoanService,private element : ElementRef) { }
 
   onClick(){
     alert("Applied for loan successfully");
@@ -57,7 +57,15 @@ export class PersonalLoanComponent implements OnInit {
       ])),
     });
     this.form.controls['gender'].setValue(user.gender,{ onlySelf: true });
+    const body = document.getElementsByTagName('app-nucleoicons')[0];
+    let navbar = document.getElementsByTagName('app-navbar')[0].children[0];
+     navbar.classList.add('navbar-hidden');
+    body.classList.add('demo-icons');
   }
+  ngOnDestroy(){
+    let navbar = document.getElementsByTagName('app-navbar')[0].children[0];
+    navbar.classList.remove('navbar-hidden');
+}
 
 
 

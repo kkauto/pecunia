@@ -26,7 +26,7 @@ const routes: Routes =[
     { path: 'vehicleloan', component: VehicleLoanComponent, },
     { path: 'homeloan',      component: HomeLoanComponent},
     { path: 'personalloan',      component: PersonalLoanComponent},
-    { path: 'myaccount',      component: GoldLoanComponent},
+    { path: 'myloans',      component: GoldLoanComponent},
     
 
 ];
