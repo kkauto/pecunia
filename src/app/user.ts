@@ -1,7 +1,7 @@
 import { loan } from "./loan";
 
 export class User {
-	accno: number;
+	
 	phone: number;
 	firstname: string;
 	lastname: string;

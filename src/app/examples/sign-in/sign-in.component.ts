@@ -24,7 +24,7 @@ export class SignInComponent implements OnInit {
         data => {console.log("register Success!") ;
         this._router.navigate(['/login'])
       },
-        error => {console.log("error dcofocuer");
+        error => {console.log("error during register");
         alert("Email id/Phone number already exist!")}
         
     )

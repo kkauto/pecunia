@@ -16,7 +16,7 @@ export class PersonalLoanComponent implements OnInit,OnDestroy {
 
   onClick(){
     alert("Applied for loan successfully");
-    window.location.href='/myaccount';
+    window.location.href='/myloans';
   }
 
   ngOnInit(): void {
@@ -27,7 +27,7 @@ export class PersonalLoanComponent implements OnInit,OnDestroy {
       "lastName": new FormControl(user.lastname, Validators.required),
       "dateOfBirth": new FormControl(user.dob, Validators.required),
       "occupation": new FormControl("", Validators.required),
-      "typeOfLoan": new FormControl("", Validators.required),
+      "loantype": new FormControl("", Validators.required),
       "email": new FormControl(user.email, Validators.compose([
         Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$'),
         Validators.required
@@ -36,7 +36,6 @@ export class PersonalLoanComponent implements OnInit,OnDestroy {
       "inputAddress": new FormControl(user.address, Validators.required),
 
       "gender": new FormControl("", Validators.required),
-      "accountNumber": new FormControl(user.accno, Validators.required),
       "amount": new FormControl("", Validators.required),
       "checkBox": new FormControl("", Validators.required),
       "phone": new FormControl(user.phone, Validators.compose([
@@ -78,7 +77,7 @@ export class PersonalLoanComponent implements OnInit,OnDestroy {
        sessionStorage.setItem("loggedinCustomer",JSON.stringify(user));
         
       },
-      error=>{}
+      error=>{console.log("didnt get loan details")}
     );
   }
 
